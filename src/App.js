@@ -29,6 +29,7 @@ function App() {
   const [expensesData, setExpensesData] = useState(expenses)
 
   const addExpensesHandler = (obj) => {
+    obj.amount = Number(obj.amount)
     setExpensesData((prevData) => {
       return [
         { ...obj, id: `e${prevData.length + 1}`, date: new Date(obj.date) },

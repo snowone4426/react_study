@@ -5,7 +5,7 @@ import './ExpenseForm.css'
 const ExpenseForm = ({ addExpensesHandler, editHandler }) => {
   const [data, setData] = useState({
     title: '',
-    amount: '',
+    amount: 0,
     date: new Date().toISOString().substring(0, 10),
   })
 
@@ -21,7 +21,7 @@ const ExpenseForm = ({ addExpensesHandler, editHandler }) => {
       addExpensesHandler(data)
       setData({
         title: '',
-        amount: '',
+        amount: 0,
         date: new Date().toISOString().substring(0, 10),
       })
       editHandler()
